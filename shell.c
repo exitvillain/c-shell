@@ -46,7 +46,10 @@ int main() {
                 }    
             }
         }  
-    
+        
+        if (arguments[0] == NULL) {
+            continue;
+        }
         pid_t pid = fork();
           
         if (pid < 0) {
