@@ -1,4 +1,4 @@
-###Summary
+## Summary
 
 This project is a minimal Unix-like shell written in C that demonstrates how command execution works at a low level.
 
@@ -6,7 +6,7 @@ It takes raw user input, tokenizes it into arguments, and executes commands usin
 
 The goal of this project is to understand the exact mechanics behind how shells, reverse shells, and command execution work under the hood — without relying on external libraries or abstractions.
 
-##Features Section
+## Features Section
 ⚙️ Features
 Interactive command prompt ($)
 Custom tokenizer (no strtok or libraries)
