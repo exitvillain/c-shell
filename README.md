@@ -36,7 +36,8 @@ This project strips away abstraction and shows exactly what happens when a syste
 
 ## Example
 
-```bash
 $ ls -la
+$ ls -l /tmp
+$ cat shell.c
 $ pwd
 $ whoami
