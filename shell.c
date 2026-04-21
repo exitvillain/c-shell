@@ -3,16 +3,15 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+#define BUFFER_SIZE 32
+#define MAX_ARGS 6
+
 
 int main() {
     
     while (1) {
-
-        //simply tune these parameters to higher values if you need more space for arguments!
-        #define BUFFER_SIZE 32
-        #define MAX_ARGS 6
-         
-        //initialize array of char stars and a regular array 
+        
+        //initialize array of char stars  
         char *arguments[MAX_ARGS] =  {NULL};
         
         //Initialize input buffer with null characters. This is a good way to clear out the buffer before each shell prompt. 
@@ -43,7 +42,6 @@ int main() {
                     inside = 1;
                     saved_address = &buffer[i];
                 }
-                
                 if (buffer[i+1] == ' ' || buffer[i+1] == '\n' || buffer[i+1] == '\0') {
                     buffer[i+1] = '\0';
                     arguments[index] = saved_address;
