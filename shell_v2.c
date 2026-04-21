@@ -5,14 +5,13 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+#define BUFFER_SIZE 32
+#define MAX_ARGS 6
 
 int main() {
     
     while (1) {
         
-        #define BUFFER_SIZE 32
-        #define MAX_ARGS 6
-
         //initialize two arrays of char stars 
         char *arguments[MAX_ARGS] =  {NULL};
         char *arguments2[MAX_ARGS] =  {NULL};
