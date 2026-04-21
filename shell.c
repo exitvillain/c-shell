@@ -17,8 +17,10 @@ int main() {
         //prompt the user 
         printf("$");  
     
-        //get input from user, lets put it in a buffer
-        fgets(buffer,32,stdin);
+        //get input from user. if we exit(1) on NULL, control D will work
+        if (fgets(buffer,32,stdin) == NULL) {
+            exit(1);
+        } 
 
         //tokenizer
         int index = 0;
