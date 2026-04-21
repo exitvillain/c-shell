@@ -10,24 +10,24 @@ int main() {
     
     while (1) {
          
+        #define BUFFER_SIZE 32
+        #define MAX_ARGS 6
+
         //initialize two arrays of char stars 
-        char *arguments[6] =  {NULL};
-        char *arguments2[6] =  {NULL};
-        
+        char *arguments[MAX_ARGS] =  {NULL};
+        char *arguments2[MAX_ARGS] =  {NULL};
         
         //Initialize input buffer, 
-         char buffer[32] = {'\0'};
+        char buffer[BUFFER_SIZE] = {'\0'};
 
-        //initialize array to pass into pipe
-        //if this command doesnt contain pipe, this array 
-        //wont do anything and will do no damange. had to initialize it here
+        //initialize array to pass into pipe. If no pipe, array is harmless
         int fd[2] = {-1};
         
         //prompt the user 
         printf("$");  
     
         //get input from user. if we exit(1) on NULL, control D will work
-        if (fgets(buffer,32,stdin) == NULL) {
+        if (fgets(buffer,BUFFER_SIZE,stdin) == NULL) {
             exit(1);
         } 
 
@@ -36,7 +36,7 @@ int main() {
         int inside = 0;  // 0 means outside the token
         int left = 0; // 0 means we are left of the pipe, if any
         char *saved_address = NULL;
-        for(int i = 0; i < 31; i++)
+        for(int i = 0; i < BUFFER_SIZE - 1; i++)
         {
             if (buffer[i] == '\n') {
                 break;
