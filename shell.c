@@ -7,18 +7,22 @@
 int main() {
     
     while (1) {
+
+        //simply tune these parameters to higher values if you need more space for arguments!
+        #define BUFFER_SIZE 32
+        #define MAX_ARGS 6
          
         //initialize array of char stars and a regular array 
-        char *arguments[6] =  {NULL};
+        char *arguments[MAX_ARGS] =  {NULL};
         
         //Initialize input buffer with null characters. This is a good way to clear out the buffer before each shell prompt. 
-        char buffer[32] = {'\0'};
+        char buffer[BUFFER_SIZE] = {'\0'};
         
         //prompt the user 
         printf("$");  
     
         //get input from user. if we exit(1) on NULL, control D will work
-        if (fgets(buffer,32,stdin) == NULL) {
+        if (fgets(buffer,BUFFER_SIZE,stdin) == NULL) {
             exit(1);
         } 
 
@@ -26,7 +30,7 @@ int main() {
         int index = 0;
         int inside = 0;  // 0 means outside the token
         char *saved_address = NULL;
-        for(int i = 0; i < 31; i++)
+        for(int i = 0; i < BUFFER_SIZE - 1; i++)
         {
             if (buffer[i] == '\n') {
                 break;
