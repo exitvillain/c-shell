@@ -82,7 +82,7 @@ int main() {
             
             if (pipe(fd) < 0 ) {
                 perror("pipe failed");
-                continue
+                continue;
             }
         }
 
