@@ -1,3 +1,15 @@
+## Example
+```bash
+$ ls -la
+$ ls -l /tmp
+$ cat shell.c
+$ ls | grep hello.c 
+$ whoami
+$ ls       -la
+$     ls
+$   ls   -l  /tmp
+$      ls | grep hello 
+
 ## Summary
 
 This project is a minimal Unix-like shell written in C that demonstrates how command execution works at a low level.
@@ -32,16 +44,3 @@ Understanding how input becomes commands and how commands become processes is cr
 
 This project strips away abstraction and shows exactly what happens when a system executes a command.
 
----
-
-## Example
-```bash
-$ ls -la
-$ ls -l /tmp
-$ cat shell.c
-$ ls | grep hello.c 
-$ whoami
-$ ls       -la
-$     ls
-$   ls   -l  /tmp
-$      ls | grep hello 
