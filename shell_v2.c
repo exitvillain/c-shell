@@ -76,15 +76,12 @@ int main() {
         if (left == 1 && arguments2[0] == NULL) {
             continue;
         }
-
         if (left == 1) {
-            
             if (pipe(fd) < 0 ) {
                 perror("pipe failed");
                 continue;
             }
         }
-
         pid_t pid = fork();
         pid_t pid2 = -1000;
 
@@ -107,11 +104,9 @@ int main() {
             else {
                  // if first child, we do this
                 if (pid == 0) {
-                    //close(fd[0]);
                     dup2(fd[1],1);
                     close(fd[0]);
                     close(fd[1]);
-                    
                     if (execvp(arguments[0], arguments) < 0) {
                         perror("execvp failed");
                         exit(1); 
@@ -138,7 +133,6 @@ int main() {
                 close(fd[1]);
             }
             while (wait(NULL) > 0); // Reaps all children
-
         }
        
     }
