@@ -1,4 +1,4 @@
-## Example
+## Example (what shell_v3.c can do)
 ```bash
 $ ls -la
 $ ls -l /tmp
@@ -27,8 +27,7 @@ Implemented piping.
 
 ## Version 3 
 
-File redirection 
-coming soon
+Implemented input < and output > file redirection
 
 ## Summary
 
