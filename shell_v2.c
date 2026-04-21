@@ -9,7 +9,7 @@
 int main() {
     
     while (1) {
-         
+        
         #define BUFFER_SIZE 32
         #define MAX_ARGS 6
 
@@ -17,10 +17,11 @@ int main() {
         char *arguments[MAX_ARGS] =  {NULL};
         char *arguments2[MAX_ARGS] =  {NULL};
         
-        //Initialize input buffer, 
+        //fgets will read into this buffer, so lets initialize it
         char buffer[BUFFER_SIZE] = {'\0'};
 
-        //initialize array to pass into pipe. If no pipe, array is harmless
+        //initialize array to pass into pipe
+        //if no pipe exists, this array will do no harm.
         int fd[2] = {-1};
         
         //prompt the user 
@@ -48,7 +49,6 @@ int main() {
                 left = 1;
                 index = 0;
                 continue;
-
             }
             else {
                 if (inside == 0) {
@@ -95,8 +95,6 @@ int main() {
             pid2 = fork();    
         }
 
-        //the parent should close both ends
-        
         if (pid < 0) {
             perror("fork failed");
             
@@ -124,8 +122,7 @@ int main() {
                 }
                 else {
                 //if second child, we do this, we know pid wont be 0 
-                //for second child, it will be pid of the parent.
-                    //close(fd[1]);
+                //for second child, it will be pid of the parent. 
                     dup2(fd[0],0);
                     close(fd[1]);
                     close(fd[0]);
