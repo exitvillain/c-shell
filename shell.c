@@ -11,8 +11,8 @@ int main() {
         //initialize array of char stars and a regular array 
         char *arguments[6] =  {NULL};
         
-        //Initialize input buffer, 
-        char buffer[32];
+        //Initialize input buffer with null characters. This is a good way to clear out the buffer before each shell prompt. 
+        char buffer[32] = {'\0'};
         
         //prompt the user 
         printf("$");  
