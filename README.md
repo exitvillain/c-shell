@@ -8,7 +8,9 @@ $ whoami
 $ ls       -la
 $     ls
 $   ls   -l  /tmp
-$      ls | grep hello 
+$      ls | grep hello
+
+---
 
 ## Summary
 
