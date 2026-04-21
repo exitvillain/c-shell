@@ -13,6 +13,19 @@ $      ls | grep hello
 
 ---
 
+## Version 1 
+
+In version 1, i built a tokenizer manualy without using strtok or the string type. Basic command execution works using fork() and execvp(), 
+
+## Version 2
+
+Implemented piping. 
+
+## Version 3 
+
+File redirection 
+coming soon
+
 ## Summary
 
 This project is a minimal Unix-like shell written in C that demonstrates how command execution works at a low level.
