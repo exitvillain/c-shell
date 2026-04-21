@@ -54,11 +54,9 @@ int main() {
                     inside = 1;
                     saved_address = &buffer[i];
                 }
-                
                 if (buffer[i+1] == ' ' || buffer[i+1] == '\n' || buffer[i+1] == '\0') {
                     //replace with \0 so that the ends of the strings are marked
                     buffer[i+1] = '\0';
-
                     if(left == 0) {
                         arguments[index] = saved_address;
                         index = index + 1;
