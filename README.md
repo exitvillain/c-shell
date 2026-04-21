@@ -39,5 +39,9 @@ This project strips away abstraction and shows exactly what happens when a syste
 $ ls -la
 $ ls -l /tmp
 $ cat shell.c
-$ pwd
+$ ls | grep hello.c 
 $ whoami
+$ ls       -la
+$     ls
+$   ls   -l  /tmp
+$      ls | grep hello 
