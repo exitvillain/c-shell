@@ -3,7 +3,11 @@
 $ ls -la
 $ ls -l /tmp
 $ cat shell.c
-$ ls | grep hello.c 
+$ ls | grep hello.c
+$ ls > somefile.txt
+$ sort < somefile.txt
+$ ls      >   somefile.txt
+$      ls   >  somefile.txt
 $ whoami
 $ ls       -la
 $     ls
